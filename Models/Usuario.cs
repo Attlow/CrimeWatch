@@ -16,6 +16,8 @@ namespace MvcMovie.Models
 
         [Column("CPF")]
         [Display(Name = "CPF")]
+        [MinLength(11, ErrorMessage = "O campo deve ter no mínimo 11 caracteres.")]
+        [RegularExpression(@"^\d+$", ErrorMessage = "O campo deve conter apenas números.")]
         public string cpf { get; set; }
     }
 }
