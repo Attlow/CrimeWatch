@@ -1,7 +1,14 @@
+using Microsoft.EntityFrameworkCore;
+using MvcMovie.Models;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddEntityFrameworkNpgsql()
+    .AddDbContext<Contexto>(options =>
+    options.UseNpgsql("Host=localhost;Port=5432;Pooling=true;Database=crimewatch_db;User Id=crimewatch_master;Password=241203;"));
 
 var app = builder.Build();
 

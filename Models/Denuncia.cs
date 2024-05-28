@@ -29,6 +29,6 @@ namespace MvcMovie.Models
         public string Status { get; set; } // "Pendente", "Revisada", "Encaminhada"
 
         [Required]
-        public virtual UsuarioModel Usuario { get; set; }
+        public virtual Usuario Usuario { get; set; }
     }
 }

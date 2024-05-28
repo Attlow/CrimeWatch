@@ -1,32 +1,21 @@
-﻿using System;
-using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace MvcMovie.Models
 {
-    public class UsuarioModel
+    [Table("Usuario")]
+    public class Usuario
     {
-        [Required]
-        public int UsuarioId { get; set; }
+        [Column("Id")]
+        [Display(Name = "Código")]
+        public int Id { get; set; }
 
-        [Required(ErrorMessage = "Informe seu Nome:")]
-        [StringLength(50)]
+        [Column("Nome")]
+        [Display(Name = "Nome")]
         public string Nome { get; set; }
 
-        [Required(ErrorMessage = "Informe seu CPF:")]
-        public string CPF { get; set; }
-
-        [Required(ErrorMessage = "Informe o Email:")]
-        [StringLength(50)]
-        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", ErrorMessage = "Email inválido.")]
-        public string Email { get; set; }
-        [Required(ErrorMessage = "Informe sua Senha:")]
-        [StringLength(20)]
-        public string Senha { get; set; }
-
-        [Required]
-        public string Role { get; set; } // "Usuario", "Operador" ou "Administrador"
-
-        public virtual ICollection<Denuncia> Denuncias { get; set; }
+        [Column("CPF")]
+        [Display(Name = "CPF")]
+        public string cpf { get; set; }
     }
 }
