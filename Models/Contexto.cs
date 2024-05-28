@@ -8,7 +8,7 @@ namespace MvcMovie.Models
             : base(options)
         {
         }
-
+        public DbSet<Denuncia> Denuncia { get; set; }
         public DbSet<Usuario> Usuarios { get; set; }
     }
 }
