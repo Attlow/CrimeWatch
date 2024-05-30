@@ -21,7 +21,7 @@ namespace MvcMovie.Controllers
         // GET: Denuncias
         public async Task<IActionResult> Index()
         {
-            var contexto = _context.Denuncia.Include(d => d.Usuario);
+            var contexto = _context.Denuncia;
             return View(await contexto.ToListAsync());
         }
 
@@ -34,7 +34,6 @@ namespace MvcMovie.Controllers
             }
 
             var denuncia = await _context.Denuncia
-                .Include(d => d.Usuario)
                 .FirstOrDefaultAsync(m => m.DenunciaId == id);
             if (denuncia == null)
             {
@@ -43,6 +42,7 @@ namespace MvcMovie.Controllers
 
             return View(denuncia);
         }
+
 
         // GET: Denuncias/Create
         public IActionResult Create()
@@ -130,7 +130,6 @@ namespace MvcMovie.Controllers
             }
 
             var denuncia = await _context.Denuncia
-                .Include(d => d.Usuario)
                 .FirstOrDefaultAsync(m => m.DenunciaId == id);
             if (denuncia == null)
             {

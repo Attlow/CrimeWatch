@@ -13,7 +13,7 @@ namespace MvcMovie.Models
 
         [Column("Id_usuario")]
         [Display(Name ="Id do Usuário")]
-        public int  { get; set; }
+        public int UsuarioId { get; set; }
 
         [Column("Descricao")]
         [Display(Name = "Descrição")]
@@ -39,16 +39,12 @@ namespace MvcMovie.Models
         [Display(Name = "Data")]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         [Required]
-        public DateTime DataHora { get; set; }
+        public DateOnly DataHora { get; set; }
 
         [Column("Autorizado")]
         [MaxLength(1)]
         [Required]
         public string Autorizado { get; set; } // "Pendente", "Revisada", "Encaminhada"
 
-        [Column("Usuario")]
-        [Display(Name = "Usuario")]
-        [Required]
-        public virtual Usuario Usuario { get; set; }
     }
 }

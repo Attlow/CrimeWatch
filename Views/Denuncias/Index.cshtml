@@ -24,10 +24,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.Autorizado)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Usuario)
-            </th>
-            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -44,9 +40,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Autorizado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Usuario.Id)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.DenunciaId">Edit</a> |
