@@ -8,7 +8,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddEntityFrameworkNpgsql()
     .AddDbContext<Contexto>(options =>
-    options.UseNpgsql("Host=26.131.226.128;Port=5432;Pooling=true;Database=crimewatch_db;User Id=crimewatch_master;Password=241203;"));
+    options.UseNpgsql("Host=localhost;Port=5432;Pooling=true;Database=crimewatch_db;User Id=crimewatch_master;Password=241203;"));
 
 var app = builder.Build();
 
