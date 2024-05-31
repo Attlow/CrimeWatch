@@ -32,8 +32,8 @@ namespace MvcMovie.Models
         [Column("Senha")]
         [Required(ErrorMessage = "Insira sua senha")]
         [Display(Name = "Senha")]
-        [StringLength(20, ErrorMessage = "Senha deve ter pelo menos 8 caracteres.", MinimumLength = 8)]
-        public string Password { get; set; }
+        [MinLength(8, ErrorMessage = "O campo deve ter no mínimo 8 caracteres.")]
+        public string senha { get; set; }
 
     }
 }
