@@ -42,9 +42,8 @@
                 @Html.DisplayFor(modelItem => item.Autorizado)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.DenunciaId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.DenunciaId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.DenunciaId">Delete</a>
+                    <a asp-action="Edit" asp-route-id="@item.DenunciaId"><img src="~/images/editar.png" alt="Editar" /></a> |
+                    <a asp-action="Details" asp-route-id="@item.DenunciaId"><img src="~/images/mais.png" alt="Detalhes" /></a> |
             </td>
         </tr>
 }
