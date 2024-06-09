@@ -17,6 +17,39 @@ html {
   min-height: 100%;
 }
 
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
 body {
-  margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    flex: 1;
+}
+
+footer {
+    background: #f8f9fa;
+    border-top: 1px solid #e9ecef;
+    padding: 1rem 0;
+    text-align: center;
+}
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    max-width: 400px; /* Adjust as necessary */
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+/* Ensure .form-control has the same styling */
+.form-control {
+    width: 100%;
+    max-width: 400px; /* Adjust as necessary */
+    box-sizing: border-box;
+    padding: 10px;
 }

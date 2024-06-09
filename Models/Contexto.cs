@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
-namespace MvcMovie.Models
+namespace CrimeWatch.Models
 {
     public class Contexto : DbContext
     {

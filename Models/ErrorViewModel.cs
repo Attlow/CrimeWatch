@@ -1,4 +1,4 @@
-namespace MvcMovie.Models
+namespace CrimeWatch.Models
 {
     public class ErrorViewModel
     {

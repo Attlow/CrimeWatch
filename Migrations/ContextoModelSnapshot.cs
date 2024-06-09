@@ -3,12 +3,12 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MvcMovie.Models;
+using CrimeWatch.Models;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace MvcMovie.Migrations
+namespace CrimeWatch.Migrations
 {
     [DbContext(typeof(Contexto))]
     partial class ContextoModelSnapshot : ModelSnapshot
@@ -22,7 +22,7 @@ namespace MvcMovie.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("MvcMovie.Models.Denuncia", b =>
+            modelBuilder.Entity("CrimeWatch.Models.Denuncia", b =>
                 {
                     b.Property<int>("DenunciaId")
                         .ValueGeneratedOnAdd()
@@ -64,7 +64,7 @@ namespace MvcMovie.Migrations
                     b.ToTable("Denuncia");
                 });
 
-            modelBuilder.Entity("MvcMovie.Models.Usuario", b =>
+            modelBuilder.Entity("CrimeWatch.Models.Usuario", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -88,9 +88,9 @@ namespace MvcMovie.Migrations
                     b.ToTable("Usuario");
                 });
 
-            modelBuilder.Entity("MvcMovie.Models.Denuncia", b =>
+            modelBuilder.Entity("CrimeWatch.Models.Denuncia", b =>
                 {
-                    b.HasOne("MvcMovie.Models.Usuario", "Usuario")
+                    b.HasOne("CrimeWatch.Models.Usuario", "Usuario")
                         .WithMany()
                         .HasForeignKey("UsuarioId")
                         .OnDelete(DeleteBehavior.Cascade)

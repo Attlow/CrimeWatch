@@ -4,7 +4,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 #nullable disable
 
-namespace MvcMovie.Migrations
+namespace CrimeWatch.Migrations
 {
     /// <inheritdoc />
     public partial class CriacaoDenuncia : Migration

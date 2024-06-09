@@ -1,8 +1,8 @@
 using Microsoft.AspNetCore.Mvc;
-using MvcMovie.Models;
+using CrimeWatch.Models;
 using System.Diagnostics;
 
-namespace MvcMovie.Controllers
+namespace CrimeWatch.Controllers
 {
     public class HomeController : Controller
     {
@@ -19,6 +19,11 @@ namespace MvcMovie.Controllers
         }
 
         public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        public IActionResult About()
         {
             return View();
         }

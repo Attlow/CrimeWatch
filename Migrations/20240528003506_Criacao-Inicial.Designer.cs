@@ -2,13 +2,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
-using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using MvcMovie.Models;
-using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
+using CrimeWatch.Models;
 
 #nullable disable
 
-namespace MvcMovie.Migrations
+namespace CrimeWatch.Migrations
 {
     [DbContext(typeof(Contexto))]
     [Migration("20240528003506_Criacao-Inicial")]
@@ -24,7 +22,7 @@ namespace MvcMovie.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("MvcMovie.Models.Usuario", b =>
+            modelBuilder.Entity("CrimeWatch.Models.Usuario", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
