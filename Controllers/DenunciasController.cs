@@ -6,9 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CrimeWatch.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace CrimeWatch.Controllers
 {
+    [Authorize]
     public class DenunciasController : Controller
     {
         private readonly Contexto _context;
@@ -47,7 +49,8 @@ namespace CrimeWatch.Controllers
         // GET: Denuncias/Create
         public IActionResult Create()
         {
-            ViewData["UsuarioId"] = new SelectList(_context.Usuarios, "Id", "Id");
+            var userId = User.FindFirst("UserId")?.Value;
+            ViewBag.UsuarioId = userId;
             return View();
         }
 

@@ -23,7 +23,7 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Autorizado)
-            </th>
+            </th
             <th>
                 Ações
             </th>
@@ -45,8 +45,10 @@
                 @Html.DisplayFor(modelItem => item.Autorizado)
             </td>
             <td>
-                    <a asp-action="Edit" asp-route-id="@item.DenunciaId"><img src="~/images/editar.png" alt="Editar" /></a> |
-                    <a asp-action="Details" asp-route-id="@item.DenunciaId"><img src="~/images/mais.png" alt="Detalhes" /></a> 
+                    @if (User.IsInRole("Admin")) {
+                    <a asp-action="Edit" asp-route-id="@item.DenunciaId"><img src="~/images/editar.png" alt="Editar" /></a> 
+                    <a asp-action="Details" asp-route-id="@item.DenunciaId"><img src="~/images/mais.png" alt="Detalhes" /></a>
+                    }
             </td>
         </tr>
 }
