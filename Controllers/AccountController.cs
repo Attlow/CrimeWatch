@@ -33,14 +33,23 @@ namespace CrimeWatch.Controllers
                 var claims = new List<Claim>
                 {
                     new Claim(ClaimTypes.Name, usuario.Nome),
-                    new Claim(ClaimTypes.Email, usuario.email)
+                    new Claim(ClaimTypes.Email, usuario.email),
+                    new Claim(ClaimTypes.Role, usuario.Role)
+
                 };
 
                 var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, new ClaimsPrincipal(claimsIdentity));
 
-                return RedirectToAction("Index", "Home");
+                if (usuario.Role == "Admin")
+                {
+                    return RedirectToAction("Create", "Denuncias");
+                }
+                else
+                {
+                    return RedirectToAction("Index", "Home");
+                }
             }
 
             ModelState.AddModelError("", "Email ou senha inválidos");

@@ -25,11 +25,18 @@ public class UsuariosController : Controller
         if (ModelState.IsValid)
         {
             var user = await _context.Usuarios
-                .FirstOrDefaultAsync(u => u.email == usuario.email && u.senha == usuario.senha);
+                .FirstOrDefaultAsync(u => u.email == usuario.email && u.senha == usuario.senha && u.Role == usuario.Role);
             if (user != null)
             {
-                // Autenticação bem-sucedida, redirecionar para a página inicial
-                return RedirectToAction(nameof(Index));
+                if (usuario.Role == "Admin")
+                {
+                    Console.WriteLine("Funciona");
+                    return RedirectToAction(nameof(Index));
+                }
+                else
+                {
+                    return RedirectToAction(nameof(Index));
+                }
             }
             else
             {

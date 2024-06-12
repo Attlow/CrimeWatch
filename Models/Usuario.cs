@@ -35,5 +35,10 @@ namespace CrimeWatch.Models
         [MinLength(8, ErrorMessage = "O campo deve ter no mínimo 8 caracteres.")]
         public string senha { get; set; }
 
+        [Required(ErrorMessage = "Deu erro dnv")]
+        [Column("Role")]
+        [Display(Name = "Role")]
+        public string Role { get; set; } = "User";
+
     }
 }
